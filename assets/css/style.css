@@ -1,0 +1,343 @@
+@font-face {
+    font-family: 'Karla';
+    src: url('../fonts/Karla-VariableFont_wght.woff2') format('woff2');
+    font-weight: 200 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+
+    /* Primary */
+    --pr-l-green: hsl(148, 38%, 91%);
+    --pr-m-green: hsl(169, 82%, 27%);
+    --pr-d-green: hsl(171, 83%, 14%);
+    --pr-Red: hsl(0, 66%, 54%);
+    /* Neutral */
+    --ne-m-grey: hsl(186, 15%, 59%);
+    --ne-d-grey: hsl(187, 24%, 22%);
+    --white: hsl(0, 0%, 100%);
+
+    --font-family: "Karla", sans-serif;
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    font-family: var(--font-family);
+}
+
+html, body {
+    height: 100vh;
+    background-color: var(--pr-l-green);
+}
+
+body {
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+.attribution {
+    padding: 1rem;
+    color: var(--ne-d-grey);
+    font-family: var(--font-family);
+    font-size: 0.875rem;
+    text-align: center;
+    -webkit-animation: fade-in 700ms ease-in;
+    animation: fade-in 700ms ease-in;
+}
+
+.attribution a {
+    color: var(--ne-vd-cyan);
+}
+
+.card-contact {
+    width: 737px;
+    height: auto;
+    padding: 2.5rem;
+    border-radius: 16px;
+    background-color: var(--white);
+}
+
+.card-contact h1 {
+    color: var(--ne-d-grey);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: calc(1rem / 2);
+    color: var(--ne-d-grey);
+}
+
+.form-label sup {
+    color: var(--pr-m-green);
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    resize: none;
+    outline: none;
+    border: 1px solid var(--ne-m-grey);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-input:is(:hover, :focus-visible) {
+    border-color: var(--pr-m-green);
+}
+
+.form-radio-group {
+    position: relative;
+    padding: 0.5rem;
+    border: 1px solid var(--ne-m-grey);
+    border-radius: 8px;
+}
+
+.form-radio-group:is(:hover) {
+    border-color: var(--pr-m-green);
+}
+
+
+.form-radio-group:has(input[type=radio]:checked) {
+    background-color: var(--pr-l-green);
+}
+
+.form-radio-group input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.form-radio-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--ne-d-grey);
+}
+
+.form-radio-label::before {
+    display: inline-block;
+    content: '';
+    width: 18px;
+    height: 19px;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+    border: 1px solid var(--ne-m-grey);
+    border-radius: 50%;
+}
+
+input[type=radio]:is(:hover, :focus-visible) + .form-radio-label::before,
+.form-radio-label:is(:hover, :focus-visible)::before {
+    border-color: var(--pr-m-green);
+    box-shadow: 0 0 2px 4px var(--pr-l-green);
+}
+
+.form-radio-group input[type=radio]:checked + .form-radio-label::before {
+    background-image: url('../images/icon-radio-selected.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-color: transparent;
+    border-width: 0;
+}
+
+.term-group {
+    position: relative;
+    margin-top: 1rem;
+}
+
+input[name=termCheck] {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.form-check-label {
+    display: flex;
+    align-items: center;
+    color: var(--ne-d-grey);
+    cursor: pointer;
+    -webkit-user-select: none;
+            user-select: none;
+}
+
+.form-check-label::before {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 1.5rem;
+    content: '';
+    border: 1px solid var(--ne-m-grey);
+    border-radius: 2px;
+    background-color: var(--white);
+    -webkit-transition: box-shadow 0.4s;
+            transition: box-shadow 0.4s;
+
+}
+input[name=termCheck]:is(:hover, :focus-visible) + .form-check-label::before,
+.form-check-label:is(:hover, :focus-visible)::before {
+    border-color: var(--pr-m-green);
+    box-shadow: 0 0 2px 4px var(--pr-l-green);
+}
+
+input[name=termCheck]:checked + .form-check-label::before {
+    background-image: url('../images/icon-checkbox-check.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.error-message {
+    display: block;
+    padding-top: 0.3rem;
+    color: var(--pr-Red);
+}
+
+.border-red,
+.border-red:is(:hover, :focus-visible) {
+    border-color: var(--pr-Red);
+}
+
+input[name=fName]:valid,
+input[name=lName]:valid,
+input[name="uEmail"]:valid,
+textarea[name=fMessage]:valid {
+    border-color: var(--ne-m-grey);
+}
+
+input[name=fName]:valid + .error-message,
+input[name=lName]:valid + .error-message,
+input[name=uEmail]:valid + .error-message,
+.container-fluid:has(input[name=queryType]:checked) + .error-message,
+textarea[name=fMessage]:valid + .error-message,
+input[name=termCheck]:valid ~ .error-message {
+    display: none;
+}
+
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    border: 1px solid var(--pr-m-green);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold);
+    background-color: var(--pr-m-green);
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    -webkit-transition: background-color 400ms;
+            transition: background-color 400ms;
+}
+
+.btn-submit:is(:hover, :focus-visible) {
+    outline: 0;
+    background-color: var(--pr-d-green);
+    box-shadow: 0 0 2px 4px var(--pr-l-green);
+}
+
+.message-box {
+    position: fixed;
+    top: 2%;
+    width: 450px;
+    height: auto;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background-color: var(--ne-d-grey);
+    color: var(--white);
+    -webkit-animation: fade-in 1s linear;;
+    animation: fade-in 1s linear;
+}
+
+.message-box span {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.message-box span img {
+    display: inline-block;
+    margin-right: 0.8rem;
+}
+
+.message-box > span:last-child {
+    color: var(--ne-m-grey);
+    font-size: 0.875rem;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    
+}
+
+
+@media only screen and (max-width: 677px) {
+    body {
+        padding: 1rem;
+    }
+    .card-contact {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        border-radius: 16px;
+        background-color: var(--white);
+    }
+
+
+    .message-box {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta 
+      name="description" 
+      content="Contact form solution, 
+      Frontend Mentor Contact form solution,
+      Frontend Mentor Contact form by Monash Perera, 
+      Contact form Solution by Monash Perera,
+      Monash Perera,
+      Monash Tharuka Perera"
+  />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Contact form Solution by Monash Perera |Frontend Mentor</title>
+  <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <main>
+    <!-- Start: Card -->
+    <div class="card-contact">
+      <h1 class="ms-2 mb-4">Contact Us</h1>
+      <form action="">
+        <div class="container-fluid p-0">
+          <div class="row m-0">
+
+            <div class="col-md-6 pe-md-2 mb-4">
+              <label class="form-label" for="fName" aria-label="First Name">
+                First Name<sup>*</sup>
+              </label>
+              <input class="form-input" type="text" name="fName" id="fName" minlength="3" autofocus required>
+              <span class="error-message d-none" id="fNameMess">This field is required</span>
+            </div>
+            <div class="col-md-6 ps-md-2 mb-4">
+              <label class="form-label" for="lName">
+                Last Name<sup>*</sup>
+              </label>
+              <input class="form-input" type="text" name="lName" minlength="3" id="lName" required>
+              <span class="error-message d-none" id="lNameMess">This field is required</span>
+            </div>
+            <div class="col-md-12 mb-4">
+              <label class="form-label" for="fName">
+                Email Address<sup>*</sup>
+              </label>
+              <input class="form-input" type="email" name="uEmail" id="uEmail" required title="Email">
+              <span class="error-message d-none" id="uEmailMess">This field is required</span>
+            </div>
+            <div class="col-md-12 mb-4">
+              <label class="form-label" for="fName">
+                Query Type<sup>*</sup>
+              </label>
+              <div class="container-fluid p-0">
+                <div class="row m-0 p-0">
+                  <div class="col-md-6 pb-3 pb-md-0 p-0 pe-md-2">
+                    <div class="form-radio-group">
+                      <input type="radio" name="queryType" id="queryType1" value="queryType1">
+                      <label class="form-radio-label" for="queryType1">General Enquiry</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-0 ps-md-2">
+                    <div class="form-radio-group">
+                      <input type="radio" name="queryType" id="queryType2" value="queryType2">
+                      <label class="form-radio-label" for="queryType2">Support Request</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="error-message d-none" id="queryTypeMess">Please select a query type</span>
+            </div>
+            <div class="col-md-12 mb-4">
+              <label class="form-label" for="">
+                Message<sup>*</sup>
+              </label>
+              <textarea class="form-input" rows="3" name="fMessage" id="fMessage" title="Message" minlength="2" required></textarea>
+              <span class="error-message d-none" id="fMessSpan">This field is required</span>
+            </div>
+            <div class="col-md-12 term-group mb-5">
+              <input type="checkbox" name="termCheck" id="termCheck" required>
+              <label class="form-check-label" for="termCheck">I consent to being contacted by the team</label>
+              <span class="error-message d-none" id="termCheckMess">To submit this form, please consent to being contacted</span>
+            </div>
+            <div class="col-md-12">
+              <button class="btn-submit" type="button" id="btnSubmit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Start: Message_Box -->
+     <div class="message-box d-none" id="messageBox">
+      <span><img src="assets/images/icon-success-check.svg" alt="">Message Sent!</span>
+      <span>Thanks for completing the form. We'll be in touch soon!</span>
+     </div>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"><b>Frontend Mentor</b></a>. 
+      Coded by <a href="https://github.com/monashperera" target="_blank"><b>Monash Perera</b></a>.
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
